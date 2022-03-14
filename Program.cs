@@ -10,6 +10,7 @@ namespace snake_and_ladder
             Console.WriteLine("snake and ladder played with single player at start 0");
             dice();
             option();
+            win();
         }
         public static void dice()
         {
@@ -42,6 +43,47 @@ namespace snake_and_ladder
 
             }
             Console.WriteLine("player's position is " + count);
+        }
+        public static void win()
+        {
+            Random rand = new Random();
+            
+            int count = 0;
+            while (count != 100)
+            {
+                int option = rand.Next(0, 3);
+
+                switch (option)
+                {
+
+                    case 1:
+                        int dice = rand.Next(1, 7);
+                        Console.WriteLine("player got ladder and moves forward by " + dice);
+                        count = count + dice;
+                        if (count > 100)
+                        {
+                            count = count - dice;
+                        }
+                        break;
+                    case 2:
+                        dice = rand.Next(1, 7);
+                        Console.WriteLine("player got snake moves backward by " + dice);
+                        count = count - dice;
+                        if (count < 0)
+                        {
+                            count = 0;
+                        }
+                        ;
+                        break;
+                    default:
+                        Console.WriteLine("player got no play and remains in same position");
+                        break;
+
+                }
+                Console.WriteLine("player's position is " + count);
+            }
+            Console.WriteLine("the player reached the winning position 100!");
+
         }
     }
 }
