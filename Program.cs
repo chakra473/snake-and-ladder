@@ -8,11 +8,11 @@ namespace snake_and_ladder
         {
             Console.WriteLine("Hello World!");
             Console.WriteLine("snake and ladder played with single player at start 0");
-            //dice();
-            //option();
-            //win();
-            //winexact();
-            //dicecount();
+            dice();
+            option();
+            win();
+            winexact();
+            dicecount();
             twoplayers();
         }
         public static void dice()
