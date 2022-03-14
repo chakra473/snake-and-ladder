@@ -12,6 +12,7 @@ namespace snake_and_ladder
             option();
             win();
             winexact();
+            dicecount();    
         }
         public static void dice()
         {
@@ -121,6 +122,52 @@ namespace snake_and_ladder
                 Console.WriteLine("player's position is " + count);
             }
             Console.WriteLine("the player reached the winning position exact 100!");
+
+        }
+        public static void dicecount()
+        {
+            Random rand = new Random();
+
+            int count = 0;
+            int dice1 = 0;
+            while (count != 100)
+            {
+                int option = rand.Next(0, 3);
+
+                switch (option)
+                {
+
+                    case 1:
+                        int dice = rand.Next(1, 7);
+                        Console.WriteLine("player got ladder and moves forward by " + dice);
+                        count = count + dice;
+                        dice1++;
+                        if (count > 100)
+                        {
+                            count -= dice;
+                        }
+                        break;
+                    case 2:
+                        dice = rand.Next(1, 7);
+                        Console.WriteLine("player got snake moves backward by " + dice);
+                        count = count - dice;
+                        dice1++;
+                        if (count < 0)
+                        {
+                            count = 0;
+                        }
+                        ;
+                        break;
+                    default:
+                        Console.WriteLine("player got no play and remains in same position");
+                        dice1++;
+                        break;
+
+                }
+                Console.WriteLine("player's position is " + count);
+            }
+            Console.WriteLine("the player reached the winning position exact 100!");
+            Console.WriteLine("number of times dice rolled are:"+dice1);
 
         }
     }
