@@ -82,7 +82,7 @@ namespace snake_and_ladder
                 }
                 Console.WriteLine("player's position is " + count);
             }
-            Console.WriteLine("the player reached the winning position 100!");
+            Console.WriteLine("the player reached the winning position exact 100!");
 
         }
     }
