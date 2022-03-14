@@ -60,10 +60,6 @@ namespace snake_and_ladder
                         int dice = rand.Next(1, 7);
                         Console.WriteLine("player got ladder and moves forward by " + dice);
                         count = count + dice;
-                        if (count > 100)
-                        {
-                            count = count - dice;
-                        }
                         break;
                     case 2:
                         dice = rand.Next(1, 7);
